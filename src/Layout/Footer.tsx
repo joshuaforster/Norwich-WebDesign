@@ -92,14 +92,14 @@ export default function Footer() {
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">Contact</h3>
                 <ul className="mt-6 space-y-4">
-                  <li className="flex items-center space-x-2">
+                  {/* <li className="flex items-center space-x-2">
                     <a href="tel:07477534661" className="text-sm leading-6 text-white hover:text-customGold transition duration-300">
                       07477 534661
                     </a>
-                  </li>
+                  </li> */}
                   <li className="flex items-center space-x-2">
                     <a href="mailto:ganoff@sampsonnco.com" className="text-sm leading-6 text-white hover:text-customGold transition duration-300">
-                      ganoff@sampsonnco.com
+                      info@norwichwebdesign.co
                     </a>
                   </li>
                   <li className="flex items-center space-x-2">
@@ -115,7 +115,7 @@ export default function Footer() {
 
         <div className="mt-4 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs text-white leading-5">
-            &copy; {currentYear} Sampson N Co - All rights reserved.
+            &copy; {currentYear} Norwich Web Design - All rights reserved.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
+import Switch from 'react-switch';
 
 const tiers = [
   {
@@ -62,6 +63,10 @@ function classNames(...classes: any) {
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState('monthly');
 
+  const handleToggle = (checked: boolean) => {
+    setBillingCycle(checked ? 'annually' : 'monthly');
+  };
+
   return (
     <div className="bg-white dark:bg-gray-900 py-24 sm:py-32 transition-colors duration-500">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -70,25 +75,20 @@ export default function Pricing() {
           <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             Tailored Plans for Trades & Construction
           </p>
-          <div className="mt-8 flex justify-center">
-            <button
-              className={classNames(
-                'px-4 py-2 text-sm font-medium',
-                billingCycle === 'monthly' ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-gray-800 dark:text-gray-200 text-gray-900'
-              )}
-              onClick={() => setBillingCycle('monthly')}
-            >
-              Monthly Billing
-            </button>
-            <button
-              className={classNames(
-                'px-4 py-2 text-sm font-medium ml-4',
-                billingCycle === 'annually' ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-gray-800 dark:text-gray-200 text-gray-900'
-              )}
-              onClick={() => setBillingCycle('annually')}
-            >
-              Annual Billing
-            </button>
+          <div className="mt-8 flex justify-center items-center">
+            <span className="text-sm font-medium text-gray-900 dark:text-white">Monthly</span>
+            <Switch
+              onChange={handleToggle}
+              checked={billingCycle === 'annually'}
+              offColor="#4f46e5"
+              onColor="#4f46e5"
+              uncheckedIcon={false}
+              checkedIcon={false}
+              height={20}
+              width={48}
+              className="mx-4"
+            />
+            <span className="text-sm font-medium text-gray-900 dark:text-white">Annually</span>
           </div>
         </div>
         <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">

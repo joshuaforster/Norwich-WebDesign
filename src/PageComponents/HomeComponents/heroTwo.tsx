@@ -6,7 +6,7 @@ export default function Hero() {
     <div className="relative px-6 pt-14 lg:px-8 bg-white dark:bg-gray-900">
       <div className="relative mx-auto max-w-2xl py-14">
         <div className="text-center">
-          <h1 className="mx-auto max-w-4xl font-caviar text-4xl lg:text-7xl font-medium tracking-tight text-slate-900 dark:text-white">
+          <h1 className="mx-auto max-w-4xl font-caviar text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-slate-900 dark:text-white">
             Transform Your Trade{' '}
             <span className="relative whitespace-nowrap text-blue-600">
               <svg

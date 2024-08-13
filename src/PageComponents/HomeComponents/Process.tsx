@@ -51,17 +51,19 @@ export default function Process() {
         <div className="mx-auto max-w-5xl p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {features.map((feature) => (
-              <div key={feature.name} className="flex">
+              <div key={feature.name} className="flex flex-col sm:flex-row items-center sm:items-start">
                 <div className="flex-none">
-                  <div className="mb-6 h-20 w-20 bg-white dark:bg-gray-700 p-4 flex items-center justify-center rounded-lg">
+                  <div className="mb-4 sm:mb-0 sm:mr-4 h-20 w-20 bg-white dark:bg-gray-700 p-4 flex items-center justify-center rounded-lg">
                     <img src={feature.imageSrc} alt={feature.name} className="h-full w-full object-contain" />
                   </div>
                 </div>
-                <div className="ml-4">
+                <div className="text-center sm:text-left">
                   <dt className="text-base font-semibold leading-7 text-gray-900 dark:text-gray-200">
                     {feature.name}
                   </dt>
-                  <dd className="mt-1 text-base leading-7 text-gray-600 dark:text-gray-400">{feature.description}</dd>
+                  <dd className="mt-1 text-base leading-7 text-gray-600 dark:text-gray-400">
+                    {feature.description}
+                  </dd>
                 </div>
               </div>
             ))}
