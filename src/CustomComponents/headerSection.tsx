@@ -19,7 +19,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ image, title }) => {
   }, []);
 
   return (
-    <div className="relative w-full h-96 transition-all duration-500">
+    <div className="relative w-full h-96 sm:h-80 md:h-72 lg:h-96 transition-all duration-500">
       {/* Background Gradient based on theme */}
       <div
         className={`absolute inset-0 z-0 transition-all duration-500 ${
@@ -36,13 +36,13 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ image, title }) => {
       <img
         src={image}
         alt={title}
-        className="w-full h-96 object-cover z-10 relative transition-opacity duration-500"
+        className="w-full h-96 sm:h-80 md:h-72 lg:h-96 object-cover z-10 relative transition-opacity duration-500"
       />
       
       {/* Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-center z-20">
         <h1
-          className={`text-4xl font-bold text-white mb-8 transition-transform ${
+          className={`text-4xl sm:text-3xl md:text-2xl lg:text-4xl font-bold text-white mb-8 transition-transform ${
             isVisible ? 'translate-x-0' : 'translate-x-[100vw]'
           }`}
           style={{

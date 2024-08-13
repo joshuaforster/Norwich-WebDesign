@@ -53,7 +53,7 @@ export default function CTA1() {
       </svg>
 
       {/* Bus image with continuous animation */}
-      <div className="absolute bottom-0 left-0 w-64 animate-busAnimation z-0 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-32 sm:w-4 md:w-10 lg:w-60 animate-busAnimation z-0 pointer-events-none">
         <img src="/images/bus.png" alt="Bus" className="w-full" />
       </div>
     </div>
