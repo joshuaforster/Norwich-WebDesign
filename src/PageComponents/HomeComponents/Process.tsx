@@ -41,10 +41,10 @@ const features = [
 
 export default function Process() {
   return (
-    <div className="relative bg-gradient-to-b from-[#0860C3] to-[#69CDFF] dark:from-[#02051E] dark:to-[#274662] py-24 sm:py-32 min-h-screen">
+    <div className="relative py-24 sm:py-32 min-h-screen">
       <div className="relative mx-auto max-w-7xl px-6 pt-10 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-white dark:text-gray-200 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white dark:text-white sm:text-4xl">
             Our Web Design & Development Process
           </h2>
         </div>

@@ -19,10 +19,14 @@ export default function Home() {
       </Helmet>
       <Hero />
       <Logo />
-      <PrimaryFeatures />
+      <CTA1 bgImage="/images/castlebg.png">
+        <PrimaryFeatures />
+      </CTA1>
       <WhyUs />
       <CTA2 />
-      <Process />
+      <CTA1 bgImage="/images/castlebg.png">
+        <Process />
+      </CTA1>
       <PricingTable />
       <CTA1
         title="Build Your Online Presence. Get a Custom Website Today."

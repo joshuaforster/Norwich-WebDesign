@@ -78,7 +78,7 @@ export default function Example() {
               <p>
                 {serviceDetails.detail.content}
               </p>
-              <ul role="list" className={`mt-8 space-y-8 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <ul className={`mt-8 space-y-8 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                 <li className="flex gap-x-3">
                   <CloudArrowUpIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
                   <span>

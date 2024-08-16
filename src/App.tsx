@@ -9,7 +9,7 @@ import ScrollToTop from './CustomComponents/ScrollToTop';
 import './App.css';
 import { ServicesProvider } from './CustomComponents/ServicesContext';
 import { ProjectsProvider } from './CustomComponents/projectsContext';
-import Example from './CustomComponents/serviceDetail';
+
 
 const Home = lazy(() => import('./MainPages/Home'));
 const About = lazy(() => import('./MainPages/About'));

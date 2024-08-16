@@ -11,7 +11,7 @@ export default function HeroSection() {
                 About Norwich Web Design
               </h1>
               <p className="mt-6 text-lg leading-8 text-white">
-                My name is Josh, the founder and lead developer of Norwich Web Design. My journey into web development began as I sought a career that would allow me to work from home while being a stay-at-home dad. Over two years, I taught myself how to code websites from scratch, driven by a passion to help small businesses thrive online.
+                Both Luke and Josh hold Masters Degree's in Communication Design, from the Norwich University of Arts. Both attained there degrees with different skillsets. Josh specialises in frontend web development, coding websites from scratch. Luke on the other hand specialises, in Graphic Design, Logo Design, Photo Editing and Animations. Together they combine there skillsets, to help you and your business have the website it deserves to bring more customers to your business.
               </p>
             </div>
           </div>

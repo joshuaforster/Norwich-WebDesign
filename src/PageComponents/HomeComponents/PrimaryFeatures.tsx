@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
-import CloudAnimation from '../../CustomComponents/Animations/CloudAnimations';
-import StarsAnimation from '../../CustomComponents/Animations/StarsAnimation';
 import { useTheme } from '../../CustomComponents/darkmode';
 
 const PrimaryFeatures: React.FC = () => {
@@ -30,25 +28,25 @@ const PrimaryFeatures: React.FC = () => {
   ];
 
   return (
-    <section
-      id="features"
-      aria-label="Features for running your books"
-      className={clsx(
-        'relative overflow-hidden pb-28 pt-20 sm:py-32',
-        theme === 'dark'
-          ? 'bg-gradient-to-br from-[#02051E] to-[#274662]'
-          : 'bg-gradient-to-r from-blue-500 to-blue-800'
-      )}
-    >
-      {/* Conditionally render based on the current theme */}
-      {theme === 'dark' ? <StarsAnimation /> : <CloudAnimation />}
+    // <section
+    //   id="features"
+    //   aria-label="Features for running your books"
+    //   className={clsx(
+    //     'relative overflow-hidden pb-28 pt-20 sm:py-32',
+    //     theme === 'dark'
+    //       ? 'bg-gradient-to-br from-[#02051E] to-[#274662]'
+    //       : 'bg-gradient-to-r from-blue-500 to-blue-800'
+    //   )}
+    // >
+    //   {/* Conditionally render based on the current theme */}
+    //   {theme === 'dark' ? <StarsAnimation /> : <CloudAnimation />}
       
-      <div className="relative pt-20">
+      <div className="relative pb-28 pt-20 sm:py-32">
         <div className="max-w-2xl mx-auto text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Here is an array of our latest projects
+            Our latest work...
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-blue-100">
+          <p className="mt-6 text-lg tracking-tight text-white">
             Click through to see the work we could do for you...
           </p>
         </div>
@@ -82,10 +80,10 @@ const PrimaryFeatures: React.FC = () => {
                 {/* Description for large screens */}
                 <p
                   className={clsx(
-                    'mt-2 hidden text-sm lg:block',
+                    'mt-2 hidden text-md lg:block',
                     selectedIndex === featureIndex
                       ? 'text-white'
-                      : 'text-blue-100 group-hover:text-white'
+                      : 'text-white group-hover:text-white'
                   )}
                 >
                   {feature.description}
@@ -120,7 +118,7 @@ const PrimaryFeatures: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    // </section>
   );
 };
 

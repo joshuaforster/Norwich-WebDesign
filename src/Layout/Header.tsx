@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../CustomComponents/darkmode';
 
 export default function Header() {

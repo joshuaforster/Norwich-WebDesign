@@ -29,7 +29,8 @@ export default function ServiceHead() {
               <p className="mt-6 text-lg leading-8 text-gray-300">
                 We provide a range of services to help your business succeed online. Learn more about what makes us unique.
               </p>
-              <dl className="hidden md:block mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
+              {/* Headline Boxes: Visible on Large Devices */}
+              <dl className="hidden lg:block mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
                 {features.map((feature, index) => (
                   <div
                     key={feature.name}
@@ -51,7 +52,6 @@ export default function ServiceHead() {
                       <dt className="inline font-semibold text-white ml-4">
                         {feature.name}
                       </dt>
-                      <Link to={feature.link} className="ml-auto text-indigo-400">See more</Link>
                     </div>
                   </div>
                 ))}
@@ -60,13 +60,13 @@ export default function ServiceHead() {
           </div>
 
           <div className="flex justify-center items-center w-full mt-6 lg:mt-0">
-            <div className={`relative mx-auto ${theme === 'dark' ? 'border-gray-400' : 'border-gray-800'} ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} border-[14px] rounded-[2.5rem] h-[454px] max-w-[341px] md:h-[682px] md:max-w-[512px]`}>
+            <div className={`relative mx-auto ${theme === 'dark' ? 'border-gray-400' : 'border-gray-800'} ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} border-[14px] rounded-[2.5rem] h-[700px] max-w-[341px] md:h-[682px] md:max-w-[512px]`}>
               <div className="h-[32px] w-[3px] bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
               <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
               <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
               <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-              <div className="rounded-[2rem] overflow-hidden h-[426px] md:h-[654px] p-6 md:p-8">
-                <div className="text-center p-4 rounded-xl h-full overflow-y-auto">
+              <div className="rounded-[2rem] overflow-hidden h-[572px] md:h-[654px] p-6 md:p-8">
+                <div className="text-center p-4 rounded-xl h-full">
                   <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     {features[selectedIndex].name}
                   </h3>
@@ -75,19 +75,26 @@ export default function ServiceHead() {
                       <span key={index} className="block mb-2">{line}</span>
                     ))}
                   </p>
+                  <Link 
+                    to={features[selectedIndex].link} 
+                    className="mt-4 inline-block rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500"
+                  >
+                    See more
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Mobile view with feature boxes */}
           <div className="flex flex-wrap justify-between lg:hidden mt-6">
             {features.map((feature, index) => (
               <div
                 key={index}
                 className={`flex-shrink-0 transition-transform duration-300 hover:scale-105 p-4 ${
                   selectedIndex === index
-                    ? 'bg-white/20'
-                    : 'hover:bg-white/10'
+                    ? 'bg-white'
+                    : 'hover:bg-white/50'
                 } rounded-lg cursor-pointer w-1/3`}
                 onClick={() => setSelectedIndex(index)}
               >

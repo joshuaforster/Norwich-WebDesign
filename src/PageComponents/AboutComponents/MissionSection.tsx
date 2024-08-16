@@ -11,18 +11,18 @@ export default function MissionSection() {
   return (
     <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:mt-8">
       <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Our Mission</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Why don't we use Web Builders?</h2>
         <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
           <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-            <p className="text-xl leading-8 text-gray-600 dark:text-gray-300">
-              We aim to provide small businesses with the same level of quality and attention as big corporations. By offering tailored, affordable web solutions, we help our clients establish a strong online presence without breaking the bank.
+            <p className="text-xl leading-8 text-gray-800 dark:text-white">
+              By coding the websites ourselves, we have full control of every aspect of your website. This means we can make sure they can outperfrom any site made with a web builder. 
             </p>
-            <div className="mt-10 max-w-xl text-base leading-7 text-gray-700 dark:text-gray-400">
+            <div className="text-xl mt-10 max-w-xl text-base leading-7 text-gray-800 dark:text-white">
               <p>
-                Many small businesses struggle to afford high-quality websites or end up with outdated, poorly designed ones. We bridge this gap by providing custom, hand-coded websites that are both aesthetically pleasing and functionally robust.
+              When fixing websites, we often encounter the same recurring issues: plugin conflicts, the constant need for updates, and slow loading times. 
               </p>
-              <p className="mt-10">
-                We focus on quality over quantity, ensuring each project meets our high standards and the unique needs of our clients. Our collaborative process involves working closely with clients to create a website they love and that truly represents their business.
+              <p className="text-xl mt-10 text-gray-800 dark:text-white">
+              With a site coded by us, these problems will be a thing of the past. Since we control every aspect of the code, you’ll never have to wake up to any unexpected surprises.
               </p>
             </div>
           </div>
