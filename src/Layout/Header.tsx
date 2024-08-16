@@ -56,9 +56,9 @@ export default function Header() {
             </ul>
             <button
               onClick={toggleTheme}
-              className="p-2 text-gray-800 bg-gray-200 rounded dark:text-white dark:bg-gray-700"
+              className="p-2 text-gray-800  bg-gray-200 rounded dark:text-white dark:bg-gray-700"
             >
-              {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
+              {theme === 'dark' ? <img src="/images/sun.png" alt="sun" className='h-10' /> : <img src="/images/moon.png" className='h-10' alt="moon" />}
             </button>
           </div>
           <div className="flex lg:hidden items-center">
@@ -84,7 +84,7 @@ export default function Header() {
               onClick={toggleTheme}
               className="ml-2 p-2 text-gray-800 bg-gray-200 rounded dark:text-white dark:bg-gray-700"
             >
-              {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
+              {theme === 'dark' ? <img src="/images/sun.png" alt="sun" className='h-10' /> : <img src="/images/moon.png" className='h-10' alt="moon" />}
             </button>
           </div>
         </div>

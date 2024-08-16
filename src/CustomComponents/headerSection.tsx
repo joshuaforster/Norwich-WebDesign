@@ -36,7 +36,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ image, title }) => {
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-contain object-bottom z-10 relative transition-opacity duration-500"
+        className="w-full h-full object-cover object-bottom z-10 relative transition-opacity duration-500"
       />
       
       {/* Text Overlay */}

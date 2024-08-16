@@ -1,36 +1,23 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CloudAnimation from '../../CustomComponents/Animations/CloudAnimations';
-import StarsAnimation from '../../CustomComponents/Animations/StarsAnimation'; // Import StarsAnimation
-import { useTheme } from '../../CustomComponents/darkmode'; // Import useTheme for dark mode
+import StarsAnimation from '../../CustomComponents/Animations/StarsAnimation'; 
+import { useTheme } from '../../CustomComponents/darkmode'; 
+import { servicesData } from '../../Data/serviceData';
 
 export default function ServiceHead() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const { theme } = useTheme(); // Access the current theme
-  
-  const features = [
-    {
-      name: 'Web Design & Development Done Differently',
-      description:
-        "What makes us unique in the development world is that we don't use WordPress, frameworks, or page builders. We meticulously write the code line by line. This gives us much more control over the design, and the website performs lightning fast because there's no bloated or messy code that slows it down. Websites built by hand will out-perform most WordPress sites and drag and drop page builders which could cost thousands of dollars. When it comes to the web, the faster and more organized websites win.",
-      image: '/images/MouseClear.png',
-    },
-    {
-      name: `Search Engine Optimization For ${new Date().getFullYear()}`,
-      description:
-        'If someone tells you they can get you to the front page of Google in 3 months - RUN! Unless your website was featured by The New York Times it could take years to rank in the top of the search results. We offer a number of the latest search engine optimization techniques: - Keyword-Centered Content & Blogs - Mobile-First-Optimized for the Best Experience - Clean & Organized Code Structure For Web Crawlers - Fully Responsive For Mobile, Tablet, & Desktop',
-      image: '/images/magnifyingGlass.png',
-    },
-    {
-      name: 'Logos, Graphic Design, & Branding',
-      description:
-        "We also offer logo and graphic design services via our own in-house graphic designer. If you have an existing logo that needs a touch-up or need a completely new one we can help build your business's brand. - Logos Starting at £350 (Rates may increase based on complexity, number of hours, and number of revisions) - Social Media Graphics (Make a post that stands out with its own custom graphics. Give us a call for plans and rates.)",
-      image: '/images/Macbook.png',
-    },
-  ];
-  
+  const { theme } = useTheme();
+
+  const features = servicesData.map(service => ({
+    name: service.name,
+    description: service.description,
+    image: service.image,
+    link: `/services/${service.id}` // Use the ID to link to the detailed view
+  }));
+
   return (
     <div className="relative overflow-hidden pt-24 sm:pt-32">
-      {/* Conditionally render CloudAnimation or StarsAnimation based on the theme */}
       {theme === 'dark' ? <StarsAnimation /> : <CloudAnimation />}
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-10 lg:px-8">
@@ -64,6 +51,7 @@ export default function ServiceHead() {
                       <dt className="inline font-semibold text-white ml-4">
                         {feature.name}
                       </dt>
+                      <Link to={feature.link} className="ml-auto text-indigo-400">See more</Link>
                     </div>
                   </div>
                 ))}

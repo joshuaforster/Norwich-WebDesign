@@ -1,44 +1,76 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import CloudAnimation from '../../CustomComponents/Animations/CloudAnimations';
 import StarsAnimation from '../../CustomComponents/Animations/StarsAnimation';
 import { useTheme } from '../../CustomComponents/darkmode';
 
-export default function CTA1() {
+interface CTAProps {
+  title?: string;
+  subtitle?: string;
+  primaryActionText?: string;
+  primaryActionHref?: string;
+  secondaryActionText?: string;
+  secondaryActionHref?: string;
+  bgImage: string;
+  children?: ReactNode; // Allow children to be passed in
+}
+
+export default function CTA({
+  title,
+  subtitle,
+  primaryActionText,
+  primaryActionHref,
+  secondaryActionText,
+  secondaryActionHref,
+  bgImage,
+  children, // Destructure children from props
+}: CTAProps) {
   const { theme } = useTheme(); // Use the theme context to get the current theme
 
   return (
     <div className={`relative isolate overflow-hidden ${theme === 'dark' ? 'bg-gradient-to-b from-[#02051E] to-[#274662]' : 'bg-gradient-to-b from-[#0760C3] to-[#69CDFF]'}`}>
-      {/* Conditionally render based on the current theme */}
       {theme === 'dark' ? <StarsAnimation /> : <CloudAnimation />}
 
-      {/* Background Image pinned to the bottom */}
-      <div className="absolute inset-0 bottom-0 w-full h-full bg-contain bg-no-repeat bg-bottom z-[-1]" style={{ backgroundImage: "url('/images/cowTower2.png')" }}></div>
+      <div
+        className="absolute inset-0 bottom-0 w-full h-full bg-contain bg-no-repeat bg-bottom"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
+
+      {/* Render children if provided */}
+      {children}
 
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8 relative z-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Build Your Online Presence.
-            <br />
-            Get a Custom Website Today.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
-            Transform your business with a professional, custom-designed website. Tailored to meet your needs and help you stand out online.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="google.com"
-              className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Get Started
-            </a>
-            <a href="google.com" className="text-sm font-semibold leading-6 text-white">
-              Learn More <span aria-hidden="true">→</span>
-            </a>
-          </div>
+          {title && (
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              {title}
+            </h2>
+          )}
+          {subtitle && (
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
+              {subtitle}
+            </p>
+          )}
+          {(primaryActionText || secondaryActionText) && (
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              {primaryActionText && primaryActionHref && (
+                <a
+                  href={primaryActionHref}
+                  className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  {primaryActionText}
+                </a>
+              )}
+              {secondaryActionText && secondaryActionHref && (
+                <a href={secondaryActionHref} className="text-sm font-semibold leading-6 text-white">
+                  {secondaryActionText} 
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
-      <svg
+      {/* <svg
         viewBox="0 0 1024 1024"
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 z-0 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
@@ -50,12 +82,11 @@ export default function CTA1() {
             <stop offset={1} stopColor={theme === 'dark' ? '#274662' : '#69CDFF'} />
           </radialGradient>
         </defs>
-      </svg>
+      </svg> */}
 
-      {/* Bus image with continuous animation */}
       <div className="absolute bottom-0 left-0 w-32 sm:w-4 md:w-10 lg:w-60 animate-busAnimation z-0 pointer-events-none">
         <img src="/images/bus.png" alt="Bus" className="w-full" />
       </div>
     </div>
-  ); 
+  );
 }

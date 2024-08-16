@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import ServiceBottom from '../PageComponents/Services/ServiceBottom';
 import ServiceHead from '../PageComponents/Services/servicesHead';
 import { useTheme } from '../CustomComponents/darkmode'; // Import useTheme for dark mode
+import CTA from '../PageComponents/Universal/CTA1';
 
 export default function ServicesHome() {
   const { theme } = useTheme(); // Access the current theme
@@ -22,8 +23,12 @@ export default function ServicesHome() {
           content="Discover the range of services offered by AD Forster Window Cleaning. From window cleaning to gutter cleaning, our experienced team is here to help you with all your cleaning needs."
         />
       </Helmet>
-      <ServiceHead />
-      <ServiceBottom />
+      <CTA
+         bgImage='images/cathedralcastle.png'
+      >
+        <ServiceHead />
+        <ServiceBottom />
+      </CTA>
     </div>
   );
 }

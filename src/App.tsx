@@ -9,16 +9,14 @@ import ScrollToTop from './CustomComponents/ScrollToTop';
 import './App.css';
 import { ServicesProvider } from './CustomComponents/ServicesContext';
 import { ProjectsProvider } from './CustomComponents/projectsContext';
+import Example from './CustomComponents/serviceDetail';
 
 const Home = lazy(() => import('./MainPages/Home'));
 const About = lazy(() => import('./MainPages/About'));
-const Kitchen = lazy(() => import('./MainPages/Kitchen'));
-const Bathroom = lazy(() => import('./MainPages/Bathroom'));
-const Gallery = lazy(() => import('./MainPages/gallery'));
 const FAQ = lazy(() => import('./MainPages/faq'));
 const Contact = lazy(() => import('./MainPages/contact'));
-const ServiceDetail = lazy(() => import('./CustomComponents/serviceDetail'));
 const ServicesHome = lazy(() => import('./MainPages/servicesHome'));
+const ServiceDetail = lazy(() => import('./CustomComponents/serviceDetail'));
 const TermsConditions = lazy(() => import('./MainPages/Legal/TermsConditions'));
 const PrivacyPolicy = lazy(() => import('./MainPages/Legal/privacypolicy'));
 const BlogList = lazy(() => import('./MainPages/BlogList'));
@@ -37,10 +35,7 @@ function App() {
                 <Route element={<Layout />}>
                   <Route path='/' element={<Home />} />
                   <Route path='/about' element={<About />} />
-                  <Route path='/gallery' element={<Gallery />} />
                   <Route path='/faq' element={<FAQ />} />
-                  <Route path='/kitchen' element={<Kitchen />} />
-                  <Route path='/bathroom' element={<Bathroom />} />
                   <Route path='/services/:id' element={<ServiceDetail />} />
                   <Route path='/services' element={<ServicesHome />} />
                   <Route path='/blog' element={<BlogList />} />

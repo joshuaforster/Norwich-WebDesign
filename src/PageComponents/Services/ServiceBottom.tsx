@@ -30,8 +30,8 @@ export default function ServiceBottom() {
   return (
     <div className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="rounded-lg bg-white p-8 shadow-lg">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center mb-8">
+        <div className="rounded-lg  bg-white dark:bg-gray-900 p-8 shadow-lg">
+          <h2 className="text-3xl font-bold tracking-tight dark:text-white text-gray-900 sm:text-4xl text-center mb-8">
             Stay on top of customer support
           </h2>
           <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:gap-y-16 lg:grid-cols-2">
@@ -46,10 +46,10 @@ export default function ServiceBottom() {
                     />
                   </div>
                   <div className="ml-6 flex-1">
-                    <dt className="text-base font-semibold leading-7 text-gray-900">
+                    <dt className="text-base font-semibold leading-7 dark:text-white text-gray-900">
                       {feature.name}
                     </dt>
-                    <dd className="mt-1 text-base leading-7 text-gray-900">
+                    <dd className="mt-1 text-base leading-7 dark:text-white text-gray-900">
                       {feature.description}
                     </dd>
                   </div>

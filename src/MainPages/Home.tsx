@@ -24,7 +24,15 @@ export default function Home() {
       <CTA2 />
       <Process />
       <PricingTable />
-      <CTA1 />
+      <CTA1
+        title="Build Your Online Presence. Get a Custom Website Today."
+        subtitle="Transform your business with a professional, custom-designed website. Tailored to meet your needs and help you stand out online."
+        primaryActionText="Get Started"
+        primaryActionHref="https://example.com/get-started"
+        secondaryActionText="Learn More"
+        secondaryActionHref="https://example.com/learn-more"
+        bgImage="/images/cowTower2.png"
+      />
       <TestimonialSlider />
     </>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { services } from '../Data/serviceData';
 import { useTheme } from '../CustomComponents/darkmode'; // Import the theme context
 
 const navigation = {
@@ -12,11 +11,6 @@ const navigation = {
     { name: 'Blog', href: '/blog', ariaLabel: 'Read our Blog' },
     { name: 'Contact', href: '/contact', ariaLabel: 'Get in touch with us on the Contact page' }
   ],
-  services: services.map(service => ({
-    name: `${service.title.charAt(0).toUpperCase() + service.title.slice(1).toLowerCase()}`,
-    href: `/services/${service.id}`,
-    ariaLabel: `${service.title}`
-  })),
   legal: [
     { name: 'Privacy Policy', href: '/privacypolicy', ariaLabel: 'Read our Privacy Policy, so you know how our cookies and tracking works' },
     { name: 'Terms & Conditions', href: '/termsandconditions', ariaLabel: 'Read our Terms & Conditions' },
@@ -66,13 +60,6 @@ export default function Footer() {
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">Services</h3>
                 <ul className="mt-6 space-y-4">
-                  {navigation.services.map((item) => (
-                    <li key={item.name}>
-                      <Link to={item.href} aria-label={item.ariaLabel} className="text-sm leading-6 text-white hover:text-customGold transition duration-300">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
                 </ul>
               </div>
             </div>
