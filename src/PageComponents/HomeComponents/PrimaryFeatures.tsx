@@ -6,7 +6,13 @@ const PrimaryFeatures: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { theme } = useTheme(); // Use the theme context to get the current theme
 
-  const features = [
+  interface Feature {
+    title: string,
+    description: string,
+    image: string
+  }
+
+  const features: Feature[] = [
     {
       title: 'Lambert & Wright',
       description:

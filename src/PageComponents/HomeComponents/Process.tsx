@@ -1,44 +1,56 @@
 import React from 'react';
 
-const features = [
+interface Feature {
+  number: number
+  name: string
+  description: string
+  imageSrc: string
+}
+
+const features: Feature[] = [
   {
-    name: 'Elite Web Solutions',
+    number: 1,
+    name: 'Initial Consultation',
     description:
-      'Start your journey with a custom 5-page website, crafted to perfection, for £400 per month with a 12-month minimum contract. For more extensive projects, we provide tailored pricing that aligns with the unique demands of your business.',
+      'We start with an in-depth consultation to understand your business needs, goals, and target audience. This helps us tailor the website to your exact specifications.',
     imageSrc: '/images/bankCard.png',
-  },  
+  },
   {
-    name: 'Ownership and Flexibility',
+    number: 2,
+    name: 'Planning and Strategy',
     description:
-      'You own your domain, content, and profiles. Cancel anytime without fees or hassle. Hosting fees are included in your monthly payment.',
+      'Next, we create a detailed plan and strategy for your website, including layout design, content structure, and feature prioritization, ensuring everything aligns with your business objectives.',
     imageSrc: '/images/keys.png',
   },
   {
-    name: 'Unlimited Edits',
+    number: 3,
+    name: 'Design and Development',
     description:
-      'Make any changes to your website at any time, and we will implement them promptly to ensure your site is always up-to-date.',
+      'Our expert team designs and develops your website, focusing on aesthetics, user experience, and functionality. We dedicate over 40 hours to ensure the highest quality.',
     imageSrc: '/images/pencil.png',
   },
   {
-    name: 'Expert Design & Development',
+    number: 4,
+    name: 'Content Integration',
     description:
-      'Our service includes over 40 hours of dedicated design, development, and testing to ensure your website meets the highest standards.',
+      'We integrate your content, including text, images, and media, ensuring it is well-organized, engaging, and aligned with your brand message.',
     imageSrc: '/images/stylus.png',
   },
   {
-    name: 'Google Page Speed Optimization',
+    number: 5,
+    name: 'Testing and Optimization',
     description:
-      'We aim for a perfect 100 on Google Page Speed scores, improving your site’s search engine ranking and overall performance.',
+      'Before launching, we rigorously test your website for functionality, responsiveness, and performance. We aim for a perfect 100 on Google Page Speed scores to optimize your site’s performance.',
     imageSrc: '/images/magnifyingGlass.png',
   },
   {
-    name: 'Google Analytics Integration',
+    number: 6,
+    name: 'Launch and Support',
     description:
-      'We install Google Analytics for free to help you monitor your website traffic and gain insights into your audience.',
+      'Finally, we launch your website and provide ongoing support. You can request unlimited edits, and we include Google Analytics integration to help you monitor your site’s performance.',
     imageSrc: '/images/google.png',
   },
-];
-
+]
 export default function Process() {
   return (
     <div className="relative py-24 sm:py-32 min-h-screen">
@@ -58,10 +70,10 @@ export default function Process() {
                   </div>
                 </div>
                 <div className="text-center sm:text-left">
-                  <dt className="text-base font-semibold leading-7 text-gray-900 dark:text-gray-200">
-                    {feature.name}
+                  <dt className="text-base font-semibold leading-7 text-gray-900 dark:text-white">
+                   {feature.number}. {feature.name}
                   </dt>
-                  <dd className="mt-1 text-base leading-7 text-gray-600 dark:text-gray-400">
+                  <dd className="mt-1 text-base leading-7 text-gray-600 dark:text-white">
                     {feature.description}
                   </dd>
                 </div>

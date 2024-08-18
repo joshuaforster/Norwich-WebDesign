@@ -11,7 +11,8 @@ interface CTAProps {
   secondaryActionText?: string;
   secondaryActionHref?: string;
   bgImage: string;
-  children?: ReactNode; // Allow children to be passed in
+  showBus?: boolean; // Add a prop to control bus visibility
+  children?: ReactNode;
 }
 
 export default function CTA({
@@ -22,7 +23,8 @@ export default function CTA({
   secondaryActionText,
   secondaryActionHref,
   bgImage,
-  children, // Destructure children from props
+  showBus = true, // Default value is true, so the bus shows by default
+  children,
 }: CTAProps) {
   const { theme } = useTheme(); // Use the theme context to get the current theme
 
@@ -35,7 +37,6 @@ export default function CTA({
         style={{ backgroundImage: `url(${bgImage})` }}
       ></div>
 
-      {/* Render children if provided */}
       {children}
 
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8 relative z-10">
@@ -70,23 +71,11 @@ export default function CTA({
         </div>
       </div>
 
-      {/* <svg
-        viewBox="0 0 1024 1024"
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 z-0 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
-      >
-        <circle r={512} cx={512} cy={512} fill="url(#8d958450-c69f-4251-94bc-4e091a323369)" fillOpacity="0.7" />
-        <defs>
-          <radialGradient id="8d958450-c69f-4251-94bc-4e091a323369">
-            <stop stopColor={theme === 'dark' ? '#02051E' : '#0760C3'} />
-            <stop offset={1} stopColor={theme === 'dark' ? '#274662' : '#69CDFF'} />
-          </radialGradient>
-        </defs>
-      </svg> */}
-
-      <div className="absolute bottom-0 left-0 w-32 sm:w-4 md:w-10 lg:w-60 animate-busAnimation z-0 pointer-events-none">
-        <img src="/images/bus.png" alt="Bus" className="w-full" />
-      </div>
+      {showBus && (
+        <div className="absolute bottom-0 left-0 w-32 sm:w-4 md:w-10 lg:w-60 animate-busAnimation z-0 pointer-events-none">
+          <img src="/images/bus.png" alt="Bus" className="w-full" />
+        </div>
+      )}
     </div>
   );
 }

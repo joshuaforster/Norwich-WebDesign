@@ -9,6 +9,7 @@ import Hero from "../PageComponents/HomeComponents/heroTwo";
 import PrimaryFeatures from "../PageComponents/HomeComponents/PrimaryFeatures";
 import WhyUs from "../PageComponents/HomeComponents/WhyUs";
 import CTA2 from "../PageComponents/Universal/CTA2";
+// import Steps from "../PageComponents/HomeComponents/steps";
 
 export default function Home() {
   return (
@@ -19,12 +20,20 @@ export default function Home() {
       </Helmet>
       <Hero />
       <Logo />
-      <CTA1 bgImage="/images/castlebg.png">
+      {/* <Steps /> */}
+      <CTA1 
+        bgImage="/images/castlebg.png"
+        showBus={false}
+        >
         <PrimaryFeatures />
       </CTA1>
       <WhyUs />
       <CTA2 />
-      <CTA1 bgImage="/images/castlebg.png">
+      <CTA1 
+        bgImage="/images/castlebg.png"
+        showBus={false}
+        >
+        
         <Process />
       </CTA1>
       <PricingTable />

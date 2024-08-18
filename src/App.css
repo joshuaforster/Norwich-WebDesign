@@ -106,18 +106,34 @@
   background-color: #916333 !important;
 }
 
-@keyframes cloudMove {
+@keyframes cloudBop {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-5px);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(0);
   }
 }
 
-.animate-clouds {
-  animation: cloudMove 600s linear infinite;
+.cloud {
+  animation: cloudBop 30s ease-in-out infinite;
+  position: relative;
+  margin-left: 2%;
+  margin-right: 2%;
+  object-fit: contain; /* Ensures the aspect ratio is maintained */
 }
+
+
+
 
 
 @keyframes busAnimation {

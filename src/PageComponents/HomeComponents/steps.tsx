@@ -1,91 +1,91 @@
-import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom'; // Assuming you use react-router for navigation
+import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
 
-interface Skill {
-  title: string;
-  description: string;
-  points: string[];
+interface Feature {
+  number: number
+  name: string
+  description: string
+  imageSrc: string
 }
 
-const hardcodedSkills: Skill[] = [
+const features: Feature[] = [
   {
-    title: 'Custom Code',
-    description: 'All our websites are built from scratch using custom code to ensure the highest quality and performance.',
-    points: [
-      'Tailored to your specific needs',
-      'Optimized for speed and efficiency',
-      'Clean, maintainable code',
-    ],
+    number: 1,
+    name: 'Initial Consultation',
+    description:
+      'We start with an in-depth consultation to understand your business needs, goals, and target audience. This helps us tailor the website to your exact specifications.',
+    imageSrc: '/images/bankCard.png',
   },
   {
-    title: 'No Web Builders',
-    description: 'We do not use any web builders. Every line of code is handcrafted to meet your specific requirements.',
-    points: [
-      'Full control over design and functionality',
-      'No unnecessary bloat',
-      'Higher performance and security',
-    ],
+    number: 2,
+    name: 'Planning and Strategy',
+    description:
+      'Next, we create a detailed plan and strategy for your website, including layout design, content structure, and feature prioritization, ensuring everything aligns with your business objectives.',
+    imageSrc: '/images/keys.png',
   },
   {
-    title: 'Headless CMS',
-    description: 'Our sites are integrated with headless CMS for seamless content management and scalability.',
-    points: [
-      'Flexible and scalable',
-      'Easy to manage content',
-      'Future-proof technology',
-    ],
+    number: 3,
+    name: 'Design and Development',
+    description:
+      'Our expert team designs and develops your website, focusing on aesthetics, user experience, and functionality. We dedicate over 40 hours to ensure the highest quality.',
+    imageSrc: '/images/pencil.png',
   },
-];
+  {
+    number: 4,
+    name: 'Content Integration',
+    description:
+      'We integrate your content, including text, images, and media, ensuring it is well-organized, engaging, and aligned with your brand message.',
+    imageSrc: '/images/stylus.png',
+  },
+  {
+    number: 5,
+    name: 'Testing and Optimization',
+    description:
+      'Before launching, we rigorously test your website for functionality, responsiveness, and performance. We aim for a perfect 100 on Google Page Speed scores to optimize your site’s performance.',
+    imageSrc: '/images/magnifyingGlass.png',
+  },
+  {
+    number: 6,
+    name: 'Launch and Support',
+    description:
+      'Finally, we launch your website and provide ongoing support. You can request unlimited edits, and we include Google Analytics integration to help you monitor your site’s performance.',
+    imageSrc: '/images/google.png',
+  },
+]
 
-const Skills: React.FC = () => {
+export default function Steps() {
   return (
-    <div className="bg-gray-100 dark:bg-dark-gray py-8">
-      <div className="mx-auto max-w-screen-xl px-4 text-center">
-        <h3 className="text-4xl font-bold mb-4 text-black dark:text-white">Our Skills</h3>
-        <div className="text-lg mb-8 text-gray-700 dark:text-gray-300">What we excel at</div>
-        <div className="flex flex-wrap justify-center">
-          {hardcodedSkills.map((skill, index) => (
-            <SkillItem key={index} skill={skill} />
-          ))}
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base font-semibold leading-7 text-indigo-600">Your Web Journey</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Step-by-Step Process to Build Your Website
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Follow our comprehensive six-step process to take your website from concept to reality.
+          </p>
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            {features.map((feature) => (
+              <div key={feature.number} className="flex flex-col">
+                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <img src={feature.imageSrc} alt="" className="h-5 w-5 flex-none" />
+                  <span className="text-indigo-600">{feature.number}.</span> {feature.name}
+                </dt>
+                <dd className="mt-4 flex flex-auto flex-col text-base dark:text-white leading-7 text-gray-600">
+                  <p className="flex-auto dark:text-white">{feature.description}</p>
+                  <p className="mt-6">
+                    <a href="#" className="text-sm font-semibold leading-6 text-indigo-600">
+                      Learn more <span aria-hidden="true">→</span>
+                    </a>
+                  </p>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </div>
-  );
-};
-
-interface SkillItemProps {
-  skill: Skill;
+  )
 }
-
-const SkillItem: React.FC<SkillItemProps> = ({ skill }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.75, // Using 75% of the window height
-  });
-
-  return (
-    <div
-      ref={ref}
-      className={`flex flex-col items-start text-left m-4 p-6 w-full md:w-1/3 lg:w-1/4 transition-transform duration-700 ease-in-out border-2 border-gray-300 rounded-lg shadow-lg hover:shadow-xl hover:border-gray-500 ${
-        inView ? 'transform translate-y-0 opacity-100' : 'transform translate-y-10 opacity-0'
-      }`}
-    >
-      <h3 className="text-2xl font-semibold text-black dark:text-white mb-2">{skill.title}</h3>
-      <div className="text-gray-700 dark:text-gray-300 mb-4">{skill.description}</div>
-      <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 mb-4">
-        {skill.points.map((point, index) => (
-          <li key={index}>{point}</li>
-        ))}
-      </ul>
-      <Link
-        to="/contact"
-        className="mt-auto inline-block bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-500 transition duration-300"
-      >
-        Get in Contact
-      </Link>
-    </div>
-  );
-};
-
-export default Skills;
