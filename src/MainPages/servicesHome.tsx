@@ -25,6 +25,7 @@ export default function ServicesHome() {
       </Helmet>
       <CTA
          bgImage='images/cathedralcastle.png'
+         showBus={false}
       >
         <ServiceHead />
         <ServiceBottom />

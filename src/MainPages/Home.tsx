@@ -8,7 +8,7 @@ import PricingTable from "../PageComponents/HomeComponents/Pricing";
 import Hero from "../PageComponents/HomeComponents/heroTwo";
 import PrimaryFeatures from "../PageComponents/HomeComponents/PrimaryFeatures";
 import WhyUs from "../PageComponents/HomeComponents/WhyUs";
-import CTA2 from "../PageComponents/Universal/CTA2";
+// import CTA2 from "../PageComponents/Universal/CTA2";
 // import Steps from "../PageComponents/HomeComponents/steps";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
         <PrimaryFeatures />
       </CTA1>
       <WhyUs />
-      <CTA2 />
+      {/* <CTA2 /> */}
       <CTA1 
         bgImage="/images/castlebg.png"
         showBus={false}
@@ -45,6 +45,7 @@ export default function Home() {
         secondaryActionText="Learn More"
         secondaryActionHref="https://example.com/learn-more"
         bgImage="/images/cowTower2.png"
+        showBus={false}
       />
       <TestimonialSlider />
     </>

@@ -60,11 +60,11 @@ export default function ServiceHead() {
           </div>
 
           <div className="flex justify-center items-center w-full mt-6 lg:mt-0">
-            <div className={`relative mx-auto ${theme === 'dark' ? 'border-gray-400' : 'border-gray-800'} ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} border-[14px] rounded-[2.5rem] h-[700px] max-w-[341px] md:h-[682px] md:max-w-[512px]`}>
-              <div className="h-[32px] w-[3px] bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-              <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-              <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-              <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+            <div className={`relative mx-auto ${theme === 'dark' ? 'border-white' : 'border-gray-800'} ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} border-[14px] rounded-[2.5rem] h-[700px] max-w-[341px] md:h-[682px] md:max-w-[512px]`}>
+              <div className="h-[32px] w-[3px] dark:bg-white bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+              <div className="h-[46px] w-[3px] dark:bg-white bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+              <div className="h-[46px] w-[3px] dark:bg-white bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+              <div className="h-[64px] w-[3px] dark:bg-white bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
               <div className="rounded-[2rem] overflow-hidden h-[572px] md:h-[654px] p-6 md:p-8">
                 <div className="text-center p-4 rounded-xl h-full">
                   <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
