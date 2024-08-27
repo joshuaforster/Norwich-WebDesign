@@ -30,7 +30,7 @@ export default function Home() {
       <WhyUs />
       {/* <CTA2 /> */}
       <CTA1 
-        bgImage="/images/castlebg.png"
+        bgImage="/images/forum.png"
         showBus={false}
         >
         

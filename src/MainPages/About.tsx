@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div>
       <CTA
-        bgImage="/images/castlebg.png"
+        bgImage="/images/sainsbury.png"
       >
         <HeroSection />
       </CTA>
